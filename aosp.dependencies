@@ -6,13 +6,13 @@
     "revision" : "7.x"
   },
   {
-	"remote" : "github"
-    "repository": "LineageOS/android_kernel_xiaomi_msm8992",
+    "remote" : "github"
+    "repository": "AndropaX/android_kernel_xiaomi_msm8992",
     "target_path": "kernel/xiaomi/msm8992",
-    "branch": "cm-14.1"
+    "branch": "RR-7.1"
   },
   {
-	"remote" : "github"
+    "remote" : "github"
     "repository": "csolanol/vendor_xiaomi",
     "target_path": "vendor/xiaomi",
     "branch": "n7.1-miui"
