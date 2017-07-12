@@ -52,6 +52,9 @@ do
     echo -n enable > $mode
 done
 
+# Enable LPM sleep
+echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
+
 # Configure governor settings for little cluster
 echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 echo 1440000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
