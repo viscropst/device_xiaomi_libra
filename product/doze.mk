@@ -1,2 +1,2 @@
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 	OneplusDoze_libra
