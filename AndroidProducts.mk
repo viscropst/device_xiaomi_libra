@@ -17,6 +17,7 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_libra.mk \
     $(LOCAL_DIR)/du.mk \
-    $(LOCAL_DIR)/carbon_libra.mk
+    $(LOCAL_DIR)/carbon_libra.mk\
+    $(LOCAL_DIR)/aosip_libra.mk
 #PRODUCT_MAKEFILES := \
 #    $(LOCAL_DIR)/du.mk
