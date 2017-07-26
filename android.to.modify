@@ -1,0 +1,8 @@
+ 
+1. framework/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java
+
+    private static final String DEFAULT_HTTPS_URL     = "https://captive.v2ex.co/generate_204";
+    private static final String DEFAULT_HTTP_URL      =
+            "http://noisyfox.cn/generate_204";
+    private static final String DEFAULT_FALLBACK_URL  = "http://noisyfox.cn/generate_204";
+    
