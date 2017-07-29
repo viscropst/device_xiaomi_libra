@@ -30,6 +30,7 @@
 #include <utils/Log.h>
 
 #include <cutils/properties.h>
+#include <hardware/hardware.h>
 #include <hardware/power.h>
 
 enum {
@@ -134,7 +135,7 @@ static void set_feature(struct power_module *module __unused,
 #endif
 }
 
-static int get_feature(struct power_module *module __unused, feature_t feature)
+int get_feature(struct power_module *module __unused, feature_t feature)
 {
     if (feature == POWER_FEATURE_SUPPORTED_PROFILES)
         return POWER_NR_OF_SUPPORTED_PROFILES;

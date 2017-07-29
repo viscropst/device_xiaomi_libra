@@ -14,9 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_libra.mk \
-    $(LOCAL_DIR)/du.mk \
-    $(LOCAL_DIR)/carbon_libra.mk
+#PRODUCT_MAKEFILES := \
+	device/xiaomi/libra/pa_libra.mk
+#    $(LOCAL_DIR)/aosp_libra.mk \
+#    $(LOCAL_DIR)/du.mk \
+#    $(LOCAL_DIR)/carbon_libra.mk
 #PRODUCT_MAKEFILES := \
 #    $(LOCAL_DIR)/du.mk
