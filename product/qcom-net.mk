@@ -5,4 +5,5 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libqsap_sdk \
     librmnetctl \
-    libxml2
+    libxml2 \
+    libprotobuf-cpp-full
