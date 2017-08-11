@@ -5,9 +5,9 @@
     "branch": "cm-14.1"
   },
   {
-    "repository": "csolanol/vendor_xiaomi",
+    "repository": "TheMuppets/proprietary_vendor_xiaomi",
     "target_path": "vendor/xiaomi",
-    "branch": "n7.1-miui"
+    "branch": "cm-14.1"
   },
   {
     "repository" : "DirtyUnicorns/android_system_qcom",
