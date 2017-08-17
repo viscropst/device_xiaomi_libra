@@ -18,7 +18,7 @@
 $(call inherit-product, device/xiaomi/libra/full_libra.mk)
 
 # Inherit some common Cypher stuff.
-$(call inherit-product, vendor/aoscp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
 
 PRODUCT_NAME := aoscp_libra
 BOARD_VENDOR := Xiaomi
