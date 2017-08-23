@@ -1,12 +1,17 @@
 # Display HAL
 PRODUCT_PACKAGES += \
-    copybit.msm8992 \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
     gralloc.msm8992 \
     hwcomposer.msm8992 \
-    liboverlay \
-    libqdutils \
-    libqdMetaData \
+    libgenlock \
     memtrack.msm8992
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # OpenGLES Android Extension
 PRODUCT_COPY_FILES += \
