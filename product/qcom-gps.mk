@@ -1,3 +1,7 @@
+# GNSS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
