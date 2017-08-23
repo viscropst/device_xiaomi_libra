@@ -1,19 +1,26 @@
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
     audio.primary.msm8992 \
-    audio_policy.msm8992 \
+    audio.a2dp.default \
+    audio.usb.default \
     audio.r_submix.default \
-    audio.usb.default
+    libaudio-resampler \
+    dsm_ctrl
 
-# some extra tools
+# Audio effects
 PRODUCT_PACKAGES += \
-    tinycap \
-    tinymix \
-    tinypcminfo \
-    tinyplay
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcomvoiceprocessingdescriptors \
+    libqcompostprocbundle
 
-# routes, paths, effects, policy
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl
+
+# Routes, paths, effects, policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
@@ -26,6 +33,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml
 
-# features
+# Features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
