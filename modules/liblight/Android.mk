@@ -22,6 +22,7 @@
 # bitrot and build breakages. Building a component unconditionally does
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
+ifeq (USES_CUSTOM_LIGHTS,true)
 
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
@@ -34,3 +35,5 @@ LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
