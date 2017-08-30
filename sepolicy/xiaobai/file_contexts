@@ -1,0 +1,4 @@
+/dev/lirc[0-9]*                                 u:object_r:lirc_device:s0
+
+/sys/devices/soc.0/qcom,bcl.*(/.*)?                                 u:object_r:sysfs_thermal:s0
+/sys/devices/qcom,bcl.*(/.*)?                                       u:object_r:sysfs_thermal:s0
