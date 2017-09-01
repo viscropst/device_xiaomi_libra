@@ -25,12 +25,14 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define LOG_TAG "PowerHAL"
 #include <utils/Log.h>
 
 #include <cutils/properties.h>
-#include <power_cust.h>
+
+#include <hardware/power.h>
 
 enum {
     PROFILE_POWER_SAVE,
@@ -48,7 +50,6 @@ enum {
 #define HIGH_PERFORMANCE_PROP   "2"
 #define BIAS_POWER_PROP         "3"
 #define BIAS_PERFORMANCE_PROP   "4"
-
 
 static int current_power_profile = -1;
 
@@ -118,10 +119,6 @@ static void power_hint(struct power_module *module __unused, power_hint_t hint,
         set_power_profile(*(int32_t *)data);
 }
 
-static struct hw_module_methods_t power_module_methods = {
-    .open = NULL,
-};
-
 static void set_feature(struct power_module *module __unused,
                 feature_t feature, int state)
 {
@@ -141,6 +138,44 @@ static int get_feature(struct power_module *module __unused, feature_t feature)
         return POWER_NR_OF_SUPPORTED_PROFILES;
     return -1;
 }
+
+static int power_open(const hw_module_t* module, const char* name,
+                    hw_device_t** device)
+{
+    ALOGD("%s: enter; name=%s", __FUNCTION__, name);
+
+    if (strcmp(name, POWER_HARDWARE_MODULE_ID)) {
+        return -EINVAL;
+    }
+
+    power_module_t *dev = (power_module_t *)calloc(1,
+            sizeof(power_module_t));
+
+    if (!dev) {
+        ALOGD("%s: failed to allocate memory", __FUNCTION__);
+        return -ENOMEM;
+    }
+
+    dev->common.tag = HARDWARE_MODULE_TAG;
+    dev->common.module_api_version = POWER_MODULE_API_VERSION_0_3;
+    dev->common.hal_api_version = HARDWARE_HAL_API_VERSION;
+
+    dev->init = power_init;
+    dev->powerHint = power_hint;
+    dev->setInteractive = power_set_interactive;
+    dev->setFeature = set_feature;
+    dev->getFeature = get_feature;
+
+    *device = (hw_device_t*)dev;
+
+    ALOGD("%s: exit", __FUNCTION__);
+
+    return 0;
+}
+
+static struct hw_module_methods_t power_module_methods = {
+    .open = power_open,
+};
 
 struct power_module HAL_MODULE_INFO_SYM = {
     .common = {

@@ -158,6 +158,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    libshims_get_process_name \
+    libshims_is_wifi_driver_loaded \
     android.hardware.gnss@1.0-impl
 
 PRODUCT_COPY_FILES += \
@@ -251,6 +253,7 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libqsap_sdk \
     librmnetctl \
+    rmnetcli \
     libxml2
 
 PRODUCT_COPY_FILES += \
@@ -347,3 +350,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+
+# RIL
+PRODUCT_PACKAGES += \
+    rild_socket
